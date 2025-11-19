@@ -1,4 +1,4 @@
--- T-GuildExport for WoW 1.12
+-- T-GuildExport for Turtle WoW 1.18
 -- Usage: /tge export
 
 T_GuildExport = {}
@@ -7,7 +7,7 @@ function T_GuildExport.ExportGuildRoster()
     -- Update guild data first
     GuildRoster()
     
-    DEFAULT_CHAT_FRAME:AddMessage("|cFF11A6ECT-GuildExport|r: Gathering guild data...")
+    DEFAULT_CHAT_FRAME:AddMessage("|cFF11A6ECT-GuildExport|r: Собираю данные гильдии...")
     
     -- Schedule data saving after short delay
     T_GuildExport.scheduleTime = GetTime() + 3
@@ -21,7 +21,7 @@ function T_GuildExport.SaveGuildData()
     
     local memberCount = GetNumGuildMembers()
     if memberCount == 0 then
-        DEFAULT_CHAT_FRAME:AddMessage("|cFF11A6ECT-GuildExport|r: No guild data available. Are you in a guild?")
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF11A6ECT-GuildExport|r: Данные гильдии не найдены. Вы состоите в гильдии?")
         return
     end
     
@@ -64,9 +64,9 @@ function T_GuildExport.SaveGuildData()
         count = count + 1
     end
     
-    DEFAULT_CHAT_FRAME:AddMessage("|cFF11A6ECT-GuildExport|r: Successfully saved " .. count .. " guild members!")
-    DEFAULT_CHAT_FRAME:AddMessage("|cFF11A6ECT-GuildExport|r: |cFFFFFF00IMPORTANT:|r Exit the game or use |cFF00FF00/logout|r to save data to file!")
-    DEFAULT_CHAT_FRAME:AddMessage("|cFF11A6ECT-GuildExport|r: File location: |cFF00FF00WTF\\Account\\YOUR_ACCOUNT\\SavedVariables\\T-GuildExport.lua|r")
+    DEFAULT_CHAT_FRAME:AddMessage("|cFF11A6ECT-GuildExport|r: Успешно сохранено " .. count .. " участников гильдии!")
+    DEFAULT_CHAT_FRAME:AddMessage("|cFF11A6ECT-GuildExport|r: |cFFFFFF00ВАЖНО:|r Выйдите из игры или используйте |cFF00FF00/logout|r для сохранения данных в файл!")
+    DEFAULT_CHAT_FRAME:AddMessage("|cFF11A6ECT-GuildExport|r: Файл будет здесь: |cFF00FF00WTF\\Account\\ВАШ_АККАУНТ\\SavedVariables\\T-GuildExport.lua|r")
 end
 
 -- Simple scheduler using OnUpdate
@@ -84,8 +84,8 @@ SlashCmdList["T_GUILDEXPORT"] = function(msg)
     if msg == "export" then
         T_GuildExport.ExportGuildRoster()
     else
-        DEFAULT_CHAT_FRAME:AddMessage("|cFF11A6ECT-GuildExport|r: Usage: |cFF00FF00/tge export|r")
-        DEFAULT_CHAT_FRAME:AddMessage("|cFF11A6ECT-GuildExport|r: Exports guild roster to SavedVariables file")
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF11A6ECT-GuildExport|r: Использование: |cFF00FF00/tge export|r")
+        DEFAULT_CHAT_FRAME:AddMessage("|cFF11A6ECT-GuildExport|r: Экспортирует список гильдии в файл SavedVariables")
     end
 end
 
@@ -95,5 +95,5 @@ SLASH_T_GUILDEXPORT1 = "/tge"
 local eventFrame = CreateFrame("Frame")
 eventFrame:RegisterEvent("PLAYER_LOGIN")
 eventFrame:SetScript("OnEvent", function()
-    DEFAULT_CHAT_FRAME:AddMessage("|cFF11A6ECT-GuildExport|r loaded. Use |cFF00FF00/tge export|r to save guild roster.")
+    DEFAULT_CHAT_FRAME:AddMessage("|cFF11A6ECT-GuildExport|r загружен. Используйте |cFF00FF00/tge export|r для сохранения списка гильдии.")
 end)
