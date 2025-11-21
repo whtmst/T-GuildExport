@@ -103,10 +103,20 @@ T-GuildExport/
 - **🌐 Онлайн конвертер**: [https://whtmst.github.io/T-GuildExport/](https://whtmst.github.io/T-GuildExport/)
 - **📦 Репозиторий**: [https://github.com/whtmst/T-GuildExport](https://github.com/whtmst/T-GuildExport)
 
-## 👥 Автор
-- **Author**: Mikhail Palagin (Wht Mst)
+---
+
+## 📄 Лицензия
+
+Лицензия [GPL-3.0 license](LICENSE) - не стесняйтесь использовать эти данные в своих проектах!
 
 ---
 
+## 👥 Автор
+
+**Создано и/или поддерживается пользователем**: [Wht Mst](https://github.com/whtmst)
+
 *Сделано с ❤️ для сообщества Turtle WoW*
+
+*Этот проект не связан (или не аффилирован) с Turtle WoW или Blizzard Entertainment.*
+
 
